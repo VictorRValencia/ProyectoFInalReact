@@ -1,13 +1,24 @@
-import "@testing-library/jest-dom";
-import { render, screen, waitFor } from "@testing-library/react";
-import axios from "axios";
-import Home from "../Routes/Home";
+import { render, screen } from "@testing-library/react";
+import { BrowserRouter } from "react-router-dom";
+import Card from "../Components/Card";
+import ContextProvider from "../Components/utils/global.context";
 
+describe('Card component', () => {
 
-const fetchData = () => axios.get("https://jsonplaceholder.typicode.com/users");
-
-test("Testeando fetch", () => {
-  return fetchData().then((data) => {
-    expect(data.data[0].name).toBe("Leanne Graham");
-  });
-});
+    test('Verificar que las Card reciban las props adecuadas', async () => {
+        await axios.get('https://jsonplaceholder.typicode.com/users').then(
+            res => {
+                render(
+                    <BrowserRouter>
+                        <ContextProvider>
+                            <Card key={res.data[0].id} id={res.data[0].id} name={res.data[0].name} username={res.data[0].username}/>
+                        </ContextProvider>
+                    </BrowserRouter>
+                )
+                const oneUsername = screen.getByText(res.data[0])
+                expect(oneUsername.textContext).toBe("Leanne Grahan")
+                expect(oneUsername).toBeInTheDocument();
+            }
+        )
+    })
+})
