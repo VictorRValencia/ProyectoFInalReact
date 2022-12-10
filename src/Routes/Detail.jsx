@@ -30,24 +30,10 @@ const Detail = () => {
      {odontologo ? (
       <table className='table'>
           <tr>
-            <th>
-              Nombre
-            </th>
-            <th>
-              Email
-            </th>
-            <th>
-              telefono
-            </th>
-            <th>
-              Sitio Web
-            </th>
-          </tr>
-          <tr>
-            <td> {odontologo.name} </td>
-            <td>{odontologo.email}  </td>
-            <td> {odontologo.phone}  </td>
-            <td> {odontologo.website} </td>
+            <td> <strong>Nombre: </strong> {odontologo.name} </td>
+            <td> <strong>email: </strong> {odontologo.email}  </td>
+            <td> <strong>Telefono: </strong> {odontologo.phone}  </td>
+            <td> <strong>Website: </strong> {odontologo.website} </td>
           </tr>
       </table>
    ) : null}
