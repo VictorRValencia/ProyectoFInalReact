@@ -3,7 +3,7 @@ import React, { useState } from "react";
 const Form = () => {
   //Aqui deberan implementar el form completo con sus validaciones
 
-  const [name, setName] = useState("");
+  const [nombre, setNombre] = useState("");
   const [email, setEmail] = useState("");
 
   const validarNombre = (value) => {
@@ -11,7 +11,7 @@ const Form = () => {
   };
 
   const onChangeName = (e) => {
-    setName(e.target.value);
+    setNombre(e.target.value);
   };
   const onChangeEmail = (e) => {
     setEmail(e.target.value);
@@ -19,9 +19,9 @@ const Form = () => {
 
   const onSumbmitForm = (e) => {
     e.preventDefault();
-    if (validarNombre(name) && /\S+@\S+\.\S+/.test(email)) {
+    if (validarNombre(nombre) && /\S+@\S+\.\S+/.test(email)) {
       document.querySelector("#mensaje").innerHTML = "Gracias " +
-      name +
+      nombre +
       ", te contactaremos cuando antes vía mail"
     } else {
       document.querySelector("#mensaje_error").innerHTML = "Por favor verifique su información nuevamente"
@@ -34,7 +34,7 @@ const Form = () => {
         <input
           id="input1"
           placeholder="Full name"
-          value={name}
+          value={nombre}
           onChange={onChangeName}
         />
         <input

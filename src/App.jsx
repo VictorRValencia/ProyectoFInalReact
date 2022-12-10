@@ -1,7 +1,4 @@
 import React from "react";
-import Footer from "./Components/Footer";
-import Navbar from "./Components/Navbar";
-import { useEffect, useContext } from "react";
 import Home from "./Routes/Home";
 import ContactoPage from "./Routes/Contact";
 import FavsPage from "./Routes/Favs";

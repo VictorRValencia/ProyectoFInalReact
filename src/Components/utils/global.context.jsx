@@ -1,5 +1,4 @@
-import React, { createContext, useReducer, useEffect, useMemo} from "react";
-import { actions, initialState, reducer } from "./reducer.service";
+import React, { createContext, useReducer, useEffect} from "react";
 import axios from "axios";
 // import { ThemeProvider, createTheme } from '@mui/material/styles';
 // import CssBaseline from '@mui/material/CssBaseline';
@@ -23,7 +22,7 @@ const reducerFunction = (state, action) => {
         return {
           bgFlag: "dark",
           ftColor: "#393944",
-          navbgColor: "#0bd7e6",
+          navbgColor: "#d6d6d6",
           bgColor: "#eee", 
           data: state.data
         }
@@ -41,7 +40,7 @@ const ContextProvider = ({ children }) => {
   //     mode: 'light',
   //   },
   // })
-  const initalState = { bgFlag: "dark",navbgColor: "#0bd7e6", ftColor: "#393944", bgColor: "#eee", data: []}
+  const initalState = { bgFlag: "dark",navbgColor: "#d6d6d6", ftColor: "#393944", bgColor: "#eee", data: []}
   const [state, dispatch] = useReducer(reducerFunction, initalState);
 
 
@@ -62,7 +61,7 @@ const ContextProvider = ({ children }) => {
     };
   return (
     <ContextGlobal.Provider value={aplicacion}>
-      <div style={{ backgroundColor: `${state.bgColor}`, width: "100%", height: "100vh", minHeight: "100%", color: `${state.ftColor}` }}>
+      <div style={{ backgroundColor: `${state.bgColor}`, width: "100%", height: "200vh", minHeight: "100%", color: `${state.ftColor}` }}>
 
         {children}
       </div>

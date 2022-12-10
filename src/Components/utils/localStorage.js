@@ -23,7 +23,7 @@ export const setFavInStorage = (odontologo) => {
 
 export const removeFavInStorage = (identifier) => {
     const storageFavs = getFavFromStorage();
-    const index = storageFavs.findIndex(fav => fav.id === identifier);
+    const index = storageFavs.findIndex(favorito => favorito.id === identifier);
     if (index !== -1) {
         storageFavs.splice(index, 1);
         localStorage.setItem("favs", JSON.stringify(storageFavs));

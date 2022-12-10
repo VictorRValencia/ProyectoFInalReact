@@ -1,6 +1,5 @@
 import React, {useContext} from "react";
 import AppBar from "@mui/material/AppBar";
-import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import { Link, Outlet } from "react-router-dom";
@@ -19,10 +18,10 @@ const Navbar = () => {
       {/* Aqui deberan agregar los liks correspondientes a las rutas definidas */}
       {/* Deberan implementar ademas la logica para cambiar de Theme con el button */}
 
-    <AppBar sx = {{margin : "0" , padding : "0", background : state.navbgColor, color : state.ftColor}} position="static">
+    <AppBar sx = {{ background : state.navbgColor, color : state.ftColor}} position="static">
           <Toolbar >
             <Typography
-              variant="h6"
+              variant="h5"
               noWrap
               component="div"
               sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
@@ -30,11 +29,11 @@ const Navbar = () => {
               <span style={{color : "red"}}>D</span>H ODONTO
             </Typography >
             <div style={{ display : "flex" }}>
-              <Link to="/Home" style={{color : state.ftColor, margin : "0px 30px"}} >Home</Link>
-              <Link to="/Contacto" style={{color : state.ftColor,margin : "0px 30px"}} >Contacto</Link>
-              <Link to="/Favs" style={{color : state.ftColor,margin : "0px 30px"}}>Favs</Link>
+              <Link to="/Home" style={{color : state.ftColor, margin : "0px 30px"}} ><strong>Home</strong></Link>
+              <Link to="/Contacto" style={{color : state.ftColor,margin : "0px 30px"}} ><strong>Contacto</strong></Link>
+              <Link to="/Favs" style={{color : state.ftColor,margin : "0px 30px"}}><strong>Favs</strong></Link>
             </div>
-            <button onClick={() => dispatch({ type: state.bgFlag })}>{state.bgFlag == "dark" ? <DarkModeIcon /> : <LightModeIcon />} </button>
+            <button style={{borderRadius:"10px"}} onClick={() => dispatch({ type: state.bgFlag })}>{state.bgFlag == "dark" ? <DarkModeIcon /> : <LightModeIcon />} </button>
           </Toolbar>
         </AppBar>
     </nav>

@@ -2,23 +2,14 @@ import React from "react";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
-import TikTokIcon from "./TikTikIcon";
-import { footer } from "./styled_component/footer";
-import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
     <div>
-      <footer>
-        {/* <img src="./images/DH.png" alt="" />
-          <div>
-            <img src="./images/ico-facebook.png" alt="" />
-            <img src="./images/ico-instagram.png" alt="" />
-            <img src="./images/ico-tiktok.png" alt="" />
-            <img src="./images/ico-whatsapp.png" alt="" />
-          </div> */}
+      <footer style={{display: "flex", flexDirection: "column", marginTop:"20px"}}>
+      
 
-        <div style={{ background: "red", with: "100%" }}>
+        <div style={{ background: "red", with: "100%", textAlign: "center"}}>
           <p
             className="back-to-top"
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
@@ -26,11 +17,13 @@ const Footer = () => {
             VOLVER HACIA ARRIBA
           </p>
         </div>
-        <div style={{ diplay: "flex" }} className="footer-container">
-          <img style={{ width: "100px" }} src="/images/DH.png" alt="DH-logo" />
+        <div style={{ display: "flex", justifyContent: "space-around", alignItems: "center"}} className="footer-container">
+          <img style={{ width: "200px" }} src="/images/DH.png" alt="DH-logo" />
+          <div style={{width:"200px"}}>
           <FacebookIcon />
-          <InstagramIcon />
+          <InstagramIcon/>
           <WhatsAppIcon />
+          </div>
         </div>
       </footer>
     </div>

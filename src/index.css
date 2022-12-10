@@ -45,8 +45,7 @@ a:hover{
 footer {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  text-align: center;
+  justify-content: space-around;
   position: relative;
   bottom: 0;
   width: 100%;
@@ -70,6 +69,8 @@ form{
   height: 100px;
   margin: 0 auto;
 }
+
+
 
 .card{
   display: flex;
@@ -125,5 +126,5 @@ tr:nth-child(even) {
 }
 
 .favButton:hover{
-  background-color: blue;
+  background-color: rgb(22, 67, 190);
 } 
