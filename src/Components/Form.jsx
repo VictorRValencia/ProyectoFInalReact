@@ -31,12 +31,14 @@ const Form = () => {
   return (
     <>
       <form onSubmit={onSumbmitForm}>
+      <label for="fullName"></label>
         <input
           id="input1"
           placeholder="Full name"
           value={nombre}
           onChange={onChangeName}
         />
+        <label for="email"></label>
         <input
           id="input2"
           placeholder="Email"

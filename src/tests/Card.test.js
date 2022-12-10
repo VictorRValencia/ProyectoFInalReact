@@ -1,4 +1,7 @@
+
 import { render, screen } from "@testing-library/react";
+import axios from 'axios';
+import React from "react";
 import { BrowserRouter } from "react-router-dom";
 import Card from "../Components/Card";
 import ContextProvider from "../Components/utils/global.context";
@@ -15,9 +18,8 @@ describe('Card component', () => {
                         </ContextProvider>
                     </BrowserRouter>
                 )
-                const oneUsername = screen.getByText(res.data[0])
-                expect(oneUsername.textContext).toBe("Leanne Grahan")
-                expect(oneUsername).toBeInTheDocument();
+                const oneUsername = screen.getByText(res.data[0].username)
+                expect(oneUsername).toBeInTheDocument;
             }
         )
     })
